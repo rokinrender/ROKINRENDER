@@ -3,69 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boffi Style - Minimalist Kitchens</title>
+    <title>Cocinas y Granitos | Diseño y Arquitectura</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Imagen de fondo de cocina de mármol moderna */
         .hero-image {
-            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop'); /* Imagen de ejemplo similar */
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                              url('https://images.unsplash.com/photo-1556912177-f512362831a8?q=80&w=2070&auto=format&fit=crop'); 
             background-size: cover;
             background-position: center;
             height: 90vh;
+        }
+
+        /* Botón de WhatsApp Flotante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 5px 20px rgba(0,0,0,0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
         }
     </style>
 </head>
 <body class="bg-white text-gray-900">
 
-    <header class="flex justify-between items-center px-8 py-4 bg-white sticky top-0 z-50">
-        <div class="flex items-center space-x-12">
-            <h1 class="text-2xl font-bold tracking-tighter">Boffi</h1>
+    <header class="flex justify-between items-center px-8 py-6 bg-white sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center space-x-10">
+            <div class="leading-tight">
+                <h1 class="text-xl font-bold tracking-tighter text-gray-800 uppercase">Cocinas y Granitos</h1>
+                <p class="text-[10px] tracking-[0.2em] text-gray-500 font-light text-center">DISEÑO Y ARQUITECTURA</p>
+            </div>
             
-            <nav class="hidden lg:flex space-x-6 text-[13px] font-medium text-gray-700">
-                <a href="#" class="hover:text-black">Collections</a>
-                <a href="#" class="hover:text-black">About</a>
-                <a href="#" class="hover:text-black">Our Brands</a>
-                <a href="#" class="hover:text-black">Projects</a>
-                <a href="#" class="hover:text-black">Contacts</a>
-                <button class="ml-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                </button>
+            <nav class="hidden lg:flex space-x-6 text-[13px] font-medium text-gray-600 uppercase tracking-widest">
+                <a href="#" class="hover:text-black transition">Colecciones</a>
+                <a href="#" class="hover:text-black transition">Nosotros</a>
+                <a href="#" class="hover:text-black transition">Proyectos</a>
+                <a href="#" class="hover:text-black transition">Contacto</a>
             </nav>
         </div>
 
-        <div class="flex items-center space-x-6 text-[12px] font-medium text-gray-600">
-            <a href="#" class="hover:text-black">Store</a>
-            <a href="#" class="hover:text-black">Catalogues</a>
-            <a href="#" class="hover:text-black">News</a>
-            <a href="#" class="hover:text-black">Login</a>
-            <div class="flex items-center space-x-1 cursor-pointer">
-                <span>English</span>
+        <div class="flex items-center space-x-6 text-[12px] font-medium text-gray-500 uppercase">
+            <a href="#" class="hover:text-black transition">Catálogos</a>
+            <div class="flex items-center space-x-1 cursor-pointer border-l pl-4 border-gray-200">
+                <span>ES</span>
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
             </div>
         </div>
     </header>
 
     <section class="relative hero-image flex flex-col justify-end p-12">
-        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white opacity-70 hover:opacity-100">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg>
-        </button>
-        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white opacity-70 hover:opacity-100">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
-        </button>
-
-        <div class="max-w-4xl text-white">
-            <h2 class="text-5xl font-light tracking-wide mb-4">KITCHENS</h2>
-            <p class="text-2xl font-light leading-relaxed mb-8">
-                Kitchens that create a visual experience via projects designed to become architectural statements.
+        <div class="max-w-4xl text-white mb-10">
+            <h2 class="text-6xl font-light tracking-tighter mb-4 uppercase">Cocinas</h2>
+            <p class="text-2xl font-light leading-relaxed mb-8 max-w-2xl">
+                Creamos experiencias visuales a través de proyectos diseñados para convertirse en piezas arquitectónicas únicas.
             </p>
-            <a href="#" class="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition uppercase font-medium">
-                Discover more
+            <a href="#" class="inline-block border border-white px-10 py-4 text-xs tracking-[0.3em] hover:bg-white hover:text-black transition uppercase font-semibold">
+                Explorar más
             </a>
         </div>
     </section>
 
-    <div class="h-20 bg-white"></div>
+    <a href="https://wa.me/573001234567" class="whatsapp-float" target="_blank" title="Chatea con nosotros">
+        <svg width="38" height="38" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.982-.363-1.747-.756-2.872-2.506-2.96-2.62-.088-.116-.719-.955-.719-1.818 0-.863.453-1.288.614-1.454.161-.166.35-.207.467-.207.117 0 .234.001.336.005.109.004.253-.042.396.3.144.35.489 1.191.532 1.283.043.091.072.197.013.313-.058.116-.088.188-.175.289-.088.101-.184.225-.263.302-.088.087-.18.182-.077.359.103.177.458.756.983 1.222.677.601 1.248.787 1.424.875.176.088.279.073.383-.046.103-.119.442-.513.56-.688.117-.174.234-.146.395-.087.161.059 1.02.481 1.196.569.176.088.293.131.336.205.043.074.043.43-.101.835z"/>
+            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 18.619c-1.189 0-2.32-.303-3.32-.876l-3.528.925.941-3.435c-.657-.969-1.003-2.111-1.003-3.284 0-3.385 2.754-6.139 6.139-6.139s6.139 2.754 6.139 6.139-2.754 6.139-6.139 6.139z"/>
+        </svg>
+    </a>
+
+    <footer class="py-10 text-center text-gray-400 text-[10px] tracking-widest uppercase">
+        © 2024 Cocinas y Granitos. Todos los derechos reservados.
+    </footer>
 
 </body>
 </html>
