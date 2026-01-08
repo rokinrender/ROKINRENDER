@@ -22,7 +22,7 @@
             background-color: #000;
         }
 
-        /* --- NAVEGACIÓN (FRANJA BLANCA ULTRA DELGADA) --- */
+        /* --- NAVEGACIÓN (FRANJA BLANCA DELGADA) --- */
         .navbar {
             position: fixed;
             top: 0;
@@ -30,14 +30,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 4px 50px; /* Grosor mínimo solicitado */
+            padding: 8px 50px; /* Grosor reducido estilo premium */
             background: rgba(255, 255, 255, 0.98);
             z-index: 1000;
         }
 
-        /* LOGO PEQUEÑO Y ESTILIZADO */
+        /* LOGO CON TAMAÑO CORREGIDO (MÁS GRANDE) */
         .logo-img {
-            height: 30px; /* Tamaño reducido solicitado */
+            height: 55px; /* Agrandado ligeramente para mejor visibilidad */
             width: auto;
             display: block;
             object-fit: contain;
@@ -52,18 +52,18 @@
         .main-nav a {
             text-decoration: none;
             color: #1a1a1a;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.5px;
         }
 
-        /* --- SECCIÓN HERO --- */
+        /* --- SECCIÓN HERO CON TU FOTO --- */
         .hero {
             position: relative;
             height: 100vh;
             width: 100%;
-            /* Carga del fondo asegurada */
-            background-image: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url('fondo.jpg'); 
+            /* Carga de tu imagen de fondo */
+            background-image: url('fondo.jpg'); 
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -72,26 +72,34 @@
             padding: 0 8% 100px 8%;
         }
 
+        /* Capa oscura ligera para que la foto se vea pero el texto resalte */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.35); 
+            z-index: 1;
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 850px;
-            color: white;
+            color: white; /* Todo blanco solicitado */
         }
 
-        /* TEXTO EN BLANCO (QUITADO EL AMARILLO) */
         .intro-text {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: white; /* Cambiado a blanco solicitado */
+            color: white; 
             margin-bottom: 15px;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .hero-content h1 {
-            font-size: 45px;
+            font-size: 55px;
             font-weight: 300;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -99,21 +107,21 @@
         }
 
         .sales-pitch {
-            font-size: 17px;
+            font-size: 19px;
             line-height: 1.5;
             font-weight: 300;
-            color: white; /* Asegurado blanco */
+            color: white;
             margin-bottom: 35px;
-            opacity: 0.85;
+            opacity: 0.9;
         }
 
         .btn-discover {
             display: inline-block;
-            padding: 10px 30px;
+            padding: 12px 40px;
             border: 1px solid white;
             color: white;
             text-decoration: none;
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 2px;
             border-radius: 50px;
             transition: 0.3s;
@@ -132,22 +140,21 @@
             right: 30px;
             background-color: #25d366;
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 28px;
             z-index: 2000;
             text-decoration: none;
         }
 
         @media (max-width: 768px) {
-            .navbar { padding: 4px 20px; }
-            .logo-img { height: 25px; }
-            .main-nav { display: none; }
-            .hero-content h1 { font-size: 30px; }
+            .navbar { padding: 10px 20px; }
+            .logo-img { height: 40px; }
+            .hero-content h1 { font-size: 35px; }
         }
     </style>
 </head>
@@ -169,8 +176,8 @@
         </nav>
 
         <div class="secondary-nav" style="display: flex; align-items: center; gap: 15px;">
-            <a href="#" style="text-decoration: none; color: black; font-size: 11px;">Tiendas</a>
-            <span style="font-weight: bold; font-size: 11px;">ES</span>
+            <a href="#" style="text-decoration: none; color: black; font-size: 12px;">Tiendas</a>
+            <span style="font-weight: bold; font-size: 12px;">ES</span>
         </div>
     </header>
 
