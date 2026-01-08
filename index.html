@@ -8,25 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root {
-            --primary-dark: #1a1a1a;
-            --text-white: #ffffff;
-            --whatsapp-color: #25d366;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        body, html {
+            height: 100%;
             font-family: 'Montserrat', sans-serif;
-            background-color: #000;
-            color: var(--text-white);
+            color: white;
+            overflow: hidden; /* Mantiene la estética de una sola pantalla */
         }
 
-        /* --- HEADER --- */
+        /* --- FONDO DE LA PÁGINA --- */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Aquí busca tu archivo llamado fondo */
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('fondo.jpg') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        /* --- CABECERA / LOGO --- */
         header {
             position: fixed;
             top: 0;
@@ -34,31 +42,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 60px;
-            background: rgba(255, 255, 255, 0.98);
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.95);
             z-index: 1000;
-            box-shadow: 0 1px 15px rgba(0,0,0,0.05);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            color: #000;
-        }
-
-        .logo-text h1 {
-            font-size: 1.1rem;
-            letter-spacing: 3px;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .logo-text p {
-            font-size: 0.65rem;
-            letter-spacing: 5px;
-            color: #666;
-            margin: 0;
-            text-transform: uppercase;
+        .logo img {
+            height: 50px; /* Ajusta el tamaño de tu logo aquí */
+            width: auto;
         }
 
         nav ul {
@@ -67,81 +58,125 @@
         }
 
         nav ul li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #333;
             font-size: 0.75rem;
-            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        /* --- CONTENIDO CENTRAL --- */
+        .main-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10%;
+        }
+
+        .main-content h2 {
+            font-size: 3rem; /* Tamaño reducido como pediste */
+            letter-spacing: 8px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .main-content p {
+            max-width: 500px;
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .btn-explorar {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             transition: 0.3s;
         }
 
-        nav ul li a:hover {
-            color: #888;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 10%;
-            /* AQUÍ COLOCAS LA IMAGEN DE LA COCINA GRIS */
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
-        }
-
-        .hero-content {
-            max-width: 550px;
-            z-index: 2;
-        }
-
-        .hero-content h2 {
-            font-size: 3.5rem; /* Tamaño reducido según tu petición */
-            font-weight: 300;
-            letter-spacing: 8px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .hero-content p {
-            font-size: 1rem;
-            font-weight: 300;
-            line-height: 1.8;
-            margin-bottom: 35px;
-            opacity: 0.9;
-        }
-
-        .btn-cta {
-            padding: 14px 40px;
-            border: 1px solid #fff;
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            transition: 0.4s;
-        }
-
-        .btn-cta:hover {
-            background: #fff;
-            color: #000;
+        .btn-explorar:hover {
+            background: white;
+            color: black;
         }
 
         /* --- WHATSAPP FLOTANTE --- */
-        .whatsapp-link {
+        .whatsapp-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: var(--whatsapp-color);
+            background-color: #25d366;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1001;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-container"></div>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Cocinas y Granitos Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Colecciones</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Proyectos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h2>COCINAS</h2>
+        <p>Creamos experiencias visuales a través de proyectos diseñados para convertirse en piezas arquitectónicas únicas.</p>
+        <a href="#" class="btn-explorar">Explorar Más</a>
+    </main>
+
+    <a href="https://wa.me/TUNUMERO" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        © 2024 COCINAS Y GRANITOS. TODOS LOS DERECHOS RESERVADOS.
+    </footer>
+
+</body>
+</html>
