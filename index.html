@@ -3,39 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocinas y Granitos | Diseño y Arquitectura</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Boffi | Cocinas de Lujo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+        /* --- ESTILOS GENERALES --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body, html {
             height: 100%;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            overflow: hidden; /* Mantiene la estética de una sola pantalla */
+            overflow-x: hidden;
         }
 
-        /* --- FONDO DE LA PÁGINA --- */
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Aquí busca tu archivo llamado fondo */
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url('fondo.jpg') center/cover no-repeat;
-            z-index: -1;
-        }
-
-        /* --- CABECERA / LOGO --- */
-        header {
+        /* --- BARRA DE NAVEGACIÓN --- */
+        .navbar {
             position: fixed;
             top: 0;
             width: 100%;
@@ -45,138 +32,171 @@
             padding: 20px 50px;
             background: rgba(255, 255, 255, 0.95);
             z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .logo img {
-            height: 50px; /* Ajusta el tamaño de tu logo aquí */
-            width: auto;
+        .logo-img {
+            height: 24px; /* Ajuste basado en tu archivo logo.png */
+            display: block;
         }
 
-        nav ul {
+        .main-nav ul {
             display: flex;
             list-style: none;
+            gap: 25px;
         }
 
-        nav ul li {
-            margin-left: 25px;
-        }
-
-        nav ul li a {
+        .main-nav a, .secondary-nav a {
             text-decoration: none;
-            color: #333;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: #000;
+            font-size: 13px;
             font-weight: 400;
+            transition: opacity 0.3s;
         }
 
-        /* --- CONTENIDO CENTRAL --- */
-        .main-content {
-            height: 100vh;
+        .main-nav a:hover, .secondary-nav a:hover {
+            opacity: 0.5;
+        }
+
+        .secondary-nav {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-left: 10%;
+            gap: 20px;
+            align-items: center;
         }
 
-        .main-content h2 {
-            font-size: 3rem; /* Tamaño reducido como pediste */
-            letter-spacing: 8px;
+        /* --- SECCIÓN PRINCIPAL (HERO) --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            /* VINCULACIÓN DE TU IMAGEN fondo.jpg */
+            background: url('fondo.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 60px 100px 60px;
+            color: white;
+        }
+
+        /* Capa oscura suave para que el texto resalte */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 35px;
             font-weight: 300;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            max-width: 85%;
         }
 
-        .main-content p {
-            max-width: 500px;
-            font-size: 1rem;
-            line-height: 1.6;
-            font-weight: 300;
-            margin-bottom: 30px;
-        }
-
-        .btn-explorar {
+        .btn-discover {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 12px 35px;
             border: 1px solid white;
             color: white;
             text-decoration: none;
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: 0.3s;
+            font-size: 12px;
+            letter-spacing: 2px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
 
-        .btn-explorar:hover {
+        .btn-discover:hover {
             background: white;
             color: black;
         }
 
-        /* --- WHATSAPP FLOTANTE --- */
+        /* --- BOTÓN WHATSAPP FLOTANTE --- */
         .whatsapp-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background-color: #25d366;
+            color: #FFF;
             width: 60px;
             height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+            border-radius: 50px;
+            text-align: center;
             font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
             z-index: 1001;
-            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
         }
 
         .whatsapp-btn:hover {
             transform: scale(1.1);
+            color: white;
         }
 
-        footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            opacity: 0.6;
+        /* Responsivo para móviles */
+        @media (max-width: 768px) {
+            .main-nav { display: none; }
+            .hero-content h1 { font-size: 32px; }
+            .hero-content p { font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="background-container"></div>
-
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Cocinas y Granitos Logo">
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Boffi Logo" class="logo-img">
         </div>
-        <nav>
+        
+        <nav class="main-nav">
             <ul>
                 <li><a href="#">Colecciones</a></li>
                 <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Marcas</a></li>
                 <li><a href="#">Proyectos</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
+
+        <div class="secondary-nav">
+            <a href="#">Tiendas</a>
+            <a href="#">Catálogos</a>
+            <a href="#">Entrar</a>
+            <span style="font-size: 13px; font-weight: 500;">ES</span>
+        </div>
     </header>
 
-    <main class="main-content">
-        <h2>COCINAS</h2>
-        <p>Creamos experiencias visuales a través de proyectos diseñados para convertirse en piezas arquitectónicas únicas.</p>
-        <a href="#" class="btn-explorar">Explorar Más</a>
+    <main class="hero">
+        <div class="hero-content">
+            <h1>COCINAS</h1>
+            <p>Cocinas que crean una experiencia visual a través de proyectos diseñados para convertirse en declaraciones arquitectónicas.</p>
+            <a href="#" class="btn-discover">DESCUBRE MÁS</a>
+        </div>
     </main>
 
-    <a href="https://wa.me/TUNUMERO" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/123456789" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <footer>
-        © 2024 COCINAS Y GRANITOS. TODOS LOS DERECHOS RESERVADOS.
-    </footer>
 
 </body>
 </html>
