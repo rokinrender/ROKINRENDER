@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocinas y Granitos | Galería de Lujo</title>
+    <title>Cocinas y Granitos | Diseño de Autor</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,21 +12,29 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body, html { height: 100%; width: 100%; overflow: hidden; background-color: #000; }
 
-        /* --- NAVBAR ESTILO BOFFI --- */
+        /* --- NAVBAR DELGADA --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%;
             display: flex; justify-content: space-between; align-items: center;
-            padding: 8px 50px;
+            padding: 6px 50px;
             background: rgba(255, 255, 255, 0.98);
             z-index: 1000;
         }
-        .logo-img { height: 50px; width: auto; object-fit: contain; }
+
+        /* VINCULACIÓN LOGO2 */
+        .logo-img { 
+            height: 45px; /* Tamaño elegante */
+            width: auto; 
+            display: block;
+            object-fit: contain;
+        }
+
         .main-nav ul { display: flex; list-style: none; gap: 25px; }
-        .main-nav a { text-decoration: none; color: #1a1a1a; font-size: 13px; font-weight: 500; }
+        .main-nav a { text-decoration: none; color: #1a1a1a; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; }
 
         /* --- CARRUSEL --- */
-        .carousel-container {
+        .carousel {
             position: relative;
             height: 100vh;
             width: 100%;
@@ -38,14 +46,14 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: opacity 1.2s ease-in-out;
             background-size: cover;
             background-position: center;
         }
 
         .slide.active { opacity: 1; }
 
-        /* Capa de protección para el texto */
+        /* Capa para resaltar texto blanco */
         .slide::after {
             content: '';
             position: absolute;
@@ -53,21 +61,21 @@
             background: rgba(0,0,0,0.3);
         }
 
-        /* --- CONTENIDO --- */
+        /* --- TEXTOS --- */
         .hero-content {
             position: absolute;
-            bottom: 100px; left: 8%;
+            bottom: 120px; left: 8%;
             z-index: 10;
             color: white;
             max-width: 800px;
         }
 
-        .hero-content h1 { font-size: 50px; font-weight: 300; margin-bottom: 15px; text-transform: uppercase; }
-        .hero-content p { font-size: 18px; font-weight: 300; margin-bottom: 30px; line-height: 1.4; }
+        .hero-content h1 { font-size: 55px; font-weight: 300; margin-bottom: 15px; }
+        .hero-content p { font-size: 18px; font-weight: 300; margin-bottom: 30px; opacity: 0.9; }
         
         .btn-discover {
             display: inline-block;
-            padding: 12px 35px;
+            padding: 12px 40px;
             border: 1px solid white;
             color: white;
             text-decoration: none;
@@ -75,23 +83,23 @@
             letter-spacing: 2px;
             border-radius: 50px;
             text-transform: uppercase;
-        }
-
-        /* --- FLECHAS DE NAVEGACIÓN --- */
-        .nav-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255,255,255,0.7);
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 20;
-            padding: 20px;
             transition: 0.3s;
         }
-        .nav-arrow:hover { color: white; }
-        .prev { left: 20px; }
-        .next { right: 20px; }
+
+        .btn-discover:hover { background: white; color: black; }
+
+        /* --- FLECHAS NANO --- */
+        .nav-arrow {
+            position: absolute;
+            top: 50%; transform: translateY(-50%);
+            color: white; font-size: 20px;
+            cursor: pointer; z-index: 20;
+            padding: 25px; opacity: 0.5;
+            transition: 0.3s;
+        }
+        .nav-arrow:hover { opacity: 1; }
+        .prev { left: 15px; }
+        .next { right: 15px; }
 
         /* WHATSAPP */
         .whatsapp-btn {
@@ -103,7 +111,7 @@
         }
 
         @media (max-width: 768px) {
-            .navbar { padding: 8px 20px; }
+            .navbar { padding: 6px 20px; }
             .main-nav { display: none; }
             .hero-content h1 { font-size: 35px; }
         }
@@ -112,7 +120,10 @@
 <body>
 
     <header class="navbar">
-        <img src="logo.png" alt="Logo" class="logo-img">
+        <div class="logo-container">
+            <img src="logo2.png" alt="Cocinas y Granitos" class="logo-img">
+        </div>
+        
         <nav class="main-nav">
             <ul>
                 <li><a href="#">Colecciones</a></li>
@@ -121,39 +132,43 @@
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
-        <div class="secondary-nav"><span style="font-weight: bold; font-size: 13px;">ES</span></div>
+
+        <div class="secondary-nav">
+            <span style="font-weight: bold; font-size: 12px; cursor: pointer;">ES</span>
+        </div>
     </header>
 
-    <div class="carousel-container">
+    <div class="carousel">
         <div class="slide active" style="background-image: url('cocina1.jpg');"></div>
         <div class="slide" style="background-image: url('cocina2.jpg');"></div>
         <div class="slide" style="background-image: url('cocina3.jpg');"></div>
-        <div class="slide" style="background-image: url('cocina4.jpg');"></div>
 
-        <div class="nav-arrow prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></div>
-        <div class="nav-arrow next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></div>
+        <div class="nav-arrow prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></div>
+        <div class="nav-arrow next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></div>
 
         <div class="hero-content">
-            <h1>Cocinas de Diseño</h1>
-            <p>Proyectos diseñados para convertirse en declaraciones arquitectónicas de funcionalidad y estilo.</p>
-            <a href="#" class="btn-discover">Descubre más</a>
+            <h1>Espacios que Inspiran</h1>
+            <p>Diseño y fabricación de cocinas integrales de lujo con acabados en granito y carpintería de autor.</p>
+            <a href="#" class="btn-discover">Explorar Proyectos</a>
         </div>
     </div>
 
-    <a href="https://wa.me/TUNUMERO" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/TUNUMERO" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
-        let currentSlide = 0;
+        let index = 0;
         const slides = document.querySelectorAll('.slide');
 
-        function changeSlide(direction) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
+        function moveSlide(n) {
+            slides[index].classList.remove('active');
+            index = (index + n + slides.length) % slides.length;
+            slides[index].classList.add('active');
         }
 
-        // Cambio automático cada 5 segundos
-        setInterval(() => changeSlide(1), 5000);
+        // Auto-play cada 6 segundos
+        setInterval(() => moveSlide(1), 6000);
     </script>
 </body>
 </html>
