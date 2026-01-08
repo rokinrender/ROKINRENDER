@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boffi Style - Minimalist Kitchens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-image {
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop'); /* Imagen de ejemplo similar */
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <header class="flex justify-between items-center px-8 py-4 bg-white sticky top-0 z-50">
+        <div class="flex items-center space-x-12">
+            <h1 class="text-2xl font-bold tracking-tighter">Boffi</h1>
+            
+            <nav class="hidden lg:flex space-x-6 text-[13px] font-medium text-gray-700">
+                <a href="#" class="hover:text-black">Collections</a>
+                <a href="#" class="hover:text-black">About</a>
+                <a href="#" class="hover:text-black">Our Brands</a>
+                <a href="#" class="hover:text-black">Projects</a>
+                <a href="#" class="hover:text-black">Contacts</a>
+                <button class="ml-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+            </nav>
+        </div>
+
+        <div class="flex items-center space-x-6 text-[12px] font-medium text-gray-600">
+            <a href="#" class="hover:text-black">Store</a>
+            <a href="#" class="hover:text-black">Catalogues</a>
+            <a href="#" class="hover:text-black">News</a>
+            <a href="#" class="hover:text-black">Login</a>
+            <div class="flex items-center space-x-1 cursor-pointer">
+                <span>English</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative hero-image flex flex-col justify-end p-12">
+        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white opacity-70 hover:opacity-100">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white opacity-70 hover:opacity-100">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+
+        <div class="max-w-4xl text-white">
+            <h2 class="text-5xl font-light tracking-wide mb-4">KITCHENS</h2>
+            <p class="text-2xl font-light leading-relaxed mb-8">
+                Kitchens that create a visual experience via projects designed to become architectural statements.
+            </p>
+            <a href="#" class="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition uppercase font-medium">
+                Discover more
+            </a>
+        </div>
+    </section>
+
+    <div class="h-20 bg-white"></div>
+
+</body>
+</html>
