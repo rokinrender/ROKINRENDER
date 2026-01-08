@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Buscando un look suizo/minimalista */
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* --- Navegación --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.9); /* Efecto traslúcido */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: -1px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a, .secondary-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.secondary-nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.lang-selector {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* --- Sección Hero --- */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: url('tu-imagen-de-cocina.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: flex-end; /* Alinea el texto abajo */
+    padding: 80px 60px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn-discover {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.4s ease;
+}
+
+.btn-discover:hover {
+    background: white;
+    color: black;
+}
